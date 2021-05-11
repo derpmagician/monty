@@ -1,5 +1,5 @@
-#ifndef _MONTY_
-#define _MONTY_
+#ifndef MONTY_H
+#define MONTY_H
 
 /* headers */
 #include <unistd.h>
@@ -10,6 +10,8 @@
 #include <fcntl.h>
 /* get line */
 #include <stdio.h>
+/* strtokn */
+#include <string.h>
 
 
 /* Common Errors */
