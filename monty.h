@@ -16,6 +16,13 @@
 #define ERR_BAD_INST	100 /* "L%d: unknown instruction %s\n", line, opcode) */
 #define ERR_BAD_MALL	101 /* "Error: malloc failed\n"); */
 
+/* Usage Errors */
+#define ERR_ARG_USG		200
+#define ERR_PUSH_USG	201
+#define ERR_PINT_USG	202
+#define ERR_POP_USG		203
+#define ERR_SWAP_USG	204
+#define ERR_ADD_USG		205
 
 
 /**
