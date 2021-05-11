@@ -1,8 +1,15 @@
 #ifndef _MONTY_
 #define _MONTY_
 
-#include <stdio.h>
+/* headers */
+#include <unistd.h>
+/* lib and handle errors */
 #include <stdlib.h>
+/* fd */
+#include <sys/stat.h>
+#include <fcntl.h>
+/* get line */
+#include <stdio.h>
 
 
 /* Common Errors */
