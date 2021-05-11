@@ -1,9 +1,20 @@
-#include "monty.h"
+#include <unistd.h>
+/* lib and handle errors */
+#include <stdlib.h>
+/* fd */
+#include <sys/stat.h>
+#include <fcntl.h>
+/* get line */
+#include <stdio.h>
+/* strtokn */
+#include <string.h>
 
 int main(int argc, char **argv)
 {
-    int fd, line_len, lines_counter = 0;
-    char *buff, *line;
+    int lines_counter = 0;
+    ssize_t line_len;
+    FILE *fd;
+    char *buff, *line, *opcode, *number;
     size_t buff_size = 0;
 
     if (argc != 2)
@@ -11,7 +22,8 @@ int main(int argc, char **argv)
         write(2, "USAGE: monty file\n", 18);
         exit(EXIT_FAILURE);
     }
-    fd = open(argv[1], O_RDONLY);
+    /* fopen returns a FILE pointer */
+    fd = fopen(argv[1], "r");
     if (!fd)
     {
         /* it is similar than write but in printf , fd = 2 because is an error */
@@ -24,7 +36,16 @@ int main(int argc, char **argv)
     while (line_len >= 0)
     {
         lines_counter++;
-        line = strtok(buff, '\n');
+        line = strtok(buff, "\n");
+        printf("line = %s\n", line);
+        line = strtok(buff, "#");
+        opcode = strtok(buff, " ");
+        number = strtok(NULL, "\n");
+       
+        printf("opcode = %s\n", opcode);
+        printf("number = %s\n\n", number);
+        /* pick_function(opcode, number - '0'); */
+
         /* we need to check if inside of the line, there are an opcode and return it */
         line_len = getline(&buff, &buff_size, fd);
         line = NULL;

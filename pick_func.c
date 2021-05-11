@@ -1,13 +1,14 @@
 #include "monty.h"
 
 /**
-  * pick_func - Select the function that relates to the Monty instruction
+  * pick_function - Select the function that relates to the Monty instruction
   * @s: The instruction to be executed
   *
   * Return: A pointer to the function to be executed or
   * NULL if the function don't exists
   */
-void (*pick_func(char *s))(stack_t **, unsigned int)
+/* void (*pick_func(char *s))(stack_t **, unsigned int) */
+void pick_function(char *s, int number)
 {
 	instruction_t insts[] = {
 		{ "push", push },
@@ -33,10 +34,8 @@ void (*pick_func(char *s))(stack_t **, unsigned int)
 	while (insts[i].opcode)
 	{
 		if (strcmp(s, insts[i].opcode) == 0)
-			return (insts[i].f);
-
+		/* in here is better to return the function or just execute it */
+			return (insts[i].f(s, number));
 		++i;
 	}
-
-	return (NULL);
 }

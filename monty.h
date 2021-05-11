@@ -48,6 +48,8 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+void pick_function(char *s, int number);
+
 void push(stack_t **stack, unsigned int param);
 void push_queue(stack_t **stack, unsigned int param);
 void pall(stack_t **stack, unsigned int line_number);
