@@ -1,13 +1,4 @@
-#include <unistd.h>
-/* lib and handle errors */
-#include <stdlib.h>
-/* fd */
-#include <sys/stat.h>
-#include <fcntl.h>
-/* get line */
-#include <stdio.h>
-/* strtokn */
-#include <string.h>
+#include "monty.h"
 
 int main(int argc, char **argv)
 {
@@ -37,14 +28,13 @@ int main(int argc, char **argv)
     {
         lines_counter++;
         line = strtok(buff, "\n");
-        printf("line = %s\n", line);
+        /* printf("line = %s\n", line); */
         line = strtok(buff, "#");
         opcode = strtok(buff, " ");
         number = strtok(NULL, "\n");
-       
-        printf("opcode = %s\n", opcode);
-        printf("number = %s\n\n", number);
-        /* pick_function(opcode, number - '0'); */
+        /* printf("opcode = %s\n", opcode); */
+        /* printf("number = %s\n\n", number); */
+        pick_function(opcode, _atoi(number));
 
         /* we need to check if inside of the line, there are an opcode and return it */
         line_len = getline(&buff, &buff_size, fd);
