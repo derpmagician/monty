@@ -8,9 +8,9 @@
   * NULL if the function don't exists
   */
 /* void (*pick_func(char *s))(stack_t **, unsigned int) */
-void pick_function(char *s, int number)
+void pick_function(char *opcode, int number)
 {
-	instruction_t insts[] = {
+	instruction_t opcode_structure[] = {
 		{ "push", push },
 		{ "push_queue", push_queue },
 		{ "pall", pall },
@@ -31,11 +31,11 @@ void pick_function(char *s, int number)
 	};
 	int i = 0;
 
-	while (insts[i].opcode)
+	while (opcode_structure[i].opcode)
 	{
-		if (strcmp(s, insts[i].opcode) == 0)
+		if (strcmp(opcode, opcode_structure[i].opcode) == 0)
 		/* in here is better to return the function or just execute it */
-			return (insts[i].f(s, number));
+			return (opcode_structure[i].f(opcode, number));
 		++i;
 	}
 }
