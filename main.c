@@ -53,8 +53,10 @@ int main(int argc, char **argv)
 			/* printf("number = %d.\n", svar.n); */
 			pick_function(opcode);
 		}
-		/* we need to check if inside of the line, 
-		there are an opcode and return it */
+
+		/*we need to check if inside of the line,*/
+		/*there are an opcode and return it*/
+
 		line_len = getline(&buff, &buff_size, fd);
 		line = NULL;
 		number = NULL;
