@@ -30,14 +30,17 @@ void pick_function(char *opcode, int number)
 	};
 	int i = 0;
 
-	while (opcode_structure[i].opcode)
+	while (opcode_structure[i].opcode && opcode)
 	{
 		if (strcmp(opcode, opcode_structure[i].opcode) == 0)
+		{
 		/* in here is better to return the function or just execute it */
-			printf("opcode tpok = %s\n", opcode);
-			printf("number = %d\n", number);
-			/* opcode_structure[i].f(&(svar.head), number); */
-			return (0);
+			/* printf("opcode tpok = %s\n", opcode); */
+			/* printf("number = %d\n", number); */
+			opcode_structure[i].f(&(svar.head), number);
+			return;
+		}
 		++i;
 	}
+	exit(EXIT_FAILURE);
 }

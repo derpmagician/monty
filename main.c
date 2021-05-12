@@ -37,19 +37,27 @@ int main(int argc, char **argv)
 	while (line_len >= 0)
 	{
 		svar.nodes_number++;
-		line = strtok(buff, "\n");
+		/* line = strtok(buff, "\n"); */
 		/* printf("line = %s\n", line); */
 		line = strtok(buff, "#");
-		opcode = strtok(buff, " ");
-		number = strtok(NULL, "\n");
-		/* printf("opcode = %s\n", opcode); */
-		/* printf("number = %s\n\n", number); */
-		pick_function(opcode, atoi(number));
+		opcode = strtok(buff, " \n");
+		if (opcode)
+		{
 
+			number = strtok(NULL, " \n\0");
+			if (!number)
+			{
+				pick_function(opcode, 0);
+				return (0);
+			}
+			/* printf("hereee opcode = %s.\n", opcode); */
+			pick_function(opcode, atoi(number));
+		}
 		/* we need to check if inside of the line, 
 		there are an opcode and return it */
 		line_len = getline(&buff, &buff_size, fd);
 		line = NULL;
+		number = NULL;
 	}
 	free(line);
 	free(buff);
