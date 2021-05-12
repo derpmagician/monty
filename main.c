@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 {
 	ssize_t line_len;
 	FILE *fd;
-	char *buff, *line, *opcode;
+	char *buff, *opcode;
 	size_t buff_size = 0;
 
 	if (argc != 2)
@@ -38,9 +38,9 @@ int main(int argc, char **argv)
 	while (line_len >= 0)
 	{
 		svar.nodes_number++;
-		line = handle_comment(buff);
+		buff = handle_comment(buff);
 		/* line = strtok(buff, "#"); */
-		opcode = strtok(line, " \n\t");
+		opcode = strtok(buff, " \n\t");
 		/*svar.opcode = opcode;*/
 		if (opcode)
 		{
@@ -50,11 +50,11 @@ int main(int argc, char **argv)
 		/*we need to check if inside of the line,*/
 		/*there are an opcode and return it*/
 		line_len = getline(&buff, &buff_size, fd);
-		line = NULL;
 		svar.after_opcode = NULL;
 	}
-	free(line);
-	free(buff);
+	free(svar.buff);
+	frees_stack();
+	fclose(fd);
 	return (0);
 }
 
