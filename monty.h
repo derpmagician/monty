@@ -84,7 +84,6 @@ void handle_cerror(int errno, char *opcode, unsigned int line);
 void handle_uerror(int errno, unsigned int line);
 
 void push(stack_t **stack, unsigned int param);
-void push_queue(stack_t **stack, unsigned int param);
 void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);

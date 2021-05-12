@@ -12,9 +12,8 @@ void pick_function(char *opcode, int number)
 {
 	instruction_t opcode_structure[] = {
 		{ "push", push },
-		{ "push_queue", push_queue },
 		{ "pall", pall },
-		{ "pint", pint },
+	/*	{ "pint", pint },
 		{ "pop", pop },
 		{ "swap", swap },
 		{ "add", add },
@@ -26,7 +25,7 @@ void pick_function(char *opcode, int number)
 		{ "pchar", pchar },
 		{ "pstr", pstr },
 		{ "rotl", rotl },
-		{ "rotr", rotr },
+		{ "rotr", rotr }, */
 		{ NULL, NULL }
 	};
 	int i = 0;
