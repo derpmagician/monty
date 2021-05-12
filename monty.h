@@ -70,6 +70,9 @@ typedef struct variables_s
 {
 	int type;
 	stack_t *head;
+	char *sbuff;
+	char *opcode;
+	int n;
 	int nodes_number;
 } var_t;
 
@@ -77,7 +80,7 @@ var_t svar;
 /* extern var_t svar; */
 /* extern stack_t *head; */
 
-void pick_function(char *opcode, int number);
+void pick_function(char *opcode);
 unsigned int count_stack(stack_t *stack);
 
 void frees_stack(void);
