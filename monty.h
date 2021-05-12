@@ -57,7 +57,15 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-
+/**
+ * struct variable_s - structure for data in the actual stack
+ * @type: 0 if is a stack ; 1 if is a queue
+ * @head: head of the stack
+ * @nodes_number: number of nodes
+ *
+ * Description: structure to handle easily the exercise and
+ * do 1 function for stack, queues, LIFO, FIFO 
+ */
 typedef struct variables_s
 {
 	int type;
