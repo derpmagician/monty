@@ -21,11 +21,10 @@ int main(int argc, char **argv)
 		write(2, "USAGE: monty file\n", 18);
 		exit(EXIT_FAILURE);
 	}
-	/* fopen returns a FILE pointer */
 	fd = fopen(argv[1], "r");
+	check_access_rights(argv[1]);
 	if (!fd)
 	{
-		/* it is similar than write but in printf , fd = 2 because is an error */
 		dprintf(2, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}

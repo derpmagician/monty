@@ -14,6 +14,7 @@
 /* strtokn */
 #include <string.h>
 
+#define MIN_ARGS 2
 /* Common Errors */
 #define ERR_BAD_INST	100 /* "L%d: unknown instruction %s\n", line, opcode) */
 #define ERR_BAD_MALL	101 /* "Error: malloc failed\n"); */
@@ -94,6 +95,7 @@ void handle_error(int errno, char *opcode, unsigned int line, char *buff);
 void handle_cerror(int errno, char *opcode, unsigned int line);
 void handle_uerror(int errno, unsigned int line);
 void handle_more_uerror(int errno, unsigned int line);
+void check_access_rights(char *filename);
 
 void push(stack_t **stack, unsigned int param);
 void pall(stack_t **stack, unsigned int line_number);
@@ -115,6 +117,7 @@ void stack(stack_t **stack, unsigned int line_number);
 
 /* standard functions of the library */
 int _atoi(char *str);
+
 
 /* double linked list functions */
 stack_t *add_dnodeint(stack_t **head, const int n);
