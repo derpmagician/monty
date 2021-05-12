@@ -1,5 +1,7 @@
 #include "monty.h"
 
+var_t svar;
+
 void initialize_stack(void);
 
 /**
@@ -13,7 +15,7 @@ int main(int argc, char **argv)
 {
 	ssize_t line_len;
 	FILE *fd;
-	char *buff, *line, *opcode, *number;
+	char *buff, *line, *opcode;
 	size_t buff_size = 0;
 
 	if (argc != 2)
@@ -32,34 +34,22 @@ int main(int argc, char **argv)
 	/*in case we can't use the getline line_size = read_line(fd, &buff);*/
 	line_len = getline(&buff, &buff_size, fd);
 	svar.sbuff = buff;
-	while (line_len > 0)
+	while (line_len >= 0)
 	{
 		svar.nodes_number++;
-		/* line = strtok(buff, "\n"); */
-		/* printf("line = %s\n", line); */
 		line = strtok(buff, "#");
-		opcode = strtok(line, " \n");
+		opcode = strtok(line, " \n\t");
 		/*svar.opcode = opcode;*/
 		if (opcode)
 		{
-
-			number = strtok(NULL, " \n\0");
-			/* printf("hereee opcode = %s.\n", opcode); */
-			if (!number)
-				svar.n = 0;
-			else
-				svar.n = atoi(number);
-			/* printf("number = %d.\n", svar.n); */
+			svar.after_opcode = strtok(NULL, " \n\t ");
 			pick_function(opcode);
 		}
-
 		/*we need to check if inside of the line,*/
 		/*there are an opcode and return it*/
-
 		line_len = getline(&buff, &buff_size, fd);
 		line = NULL;
-		number = NULL;
-		svar.n = 0;
+		svar.after_opcode = NULL;
 	}
 	free(line);
 	free(buff);
@@ -73,6 +63,6 @@ void initialize_stack(void)
 	svar.head = NULL;
 	svar.sbuff = NULL;
 	svar.opcode = NULL;
-	svar.n = 0;
+	svar.after_opcode = NULL;
 	svar.nodes_number = 0;
 }
