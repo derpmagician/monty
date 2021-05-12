@@ -34,7 +34,10 @@ void pick_function(char *opcode, int number)
 	{
 		if (strcmp(opcode, opcode_structure[i].opcode) == 0)
 		/* in here is better to return the function or just execute it */
-			return (opcode_structure[i].f(&(svar.head), number));
+			printf("opcode tpok = %s\n", opcode);
+			printf("number = %d\n", number);
+			/* opcode_structure[i].f(&(svar.head), number); */
+			return (0);
 		++i;
 	}
 }
