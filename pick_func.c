@@ -8,7 +8,7 @@
   * NULL if the function don't exists
   */
 /* void (*pick_func(char *s))(stack_t **, unsigned int) */
-void pick_function(char *opcode, int number)
+void pick_function(char *opcode)
 {
 	instruction_t opcode_structure[] = {
 		{ "push", push },
@@ -16,10 +16,10 @@ void pick_function(char *opcode, int number)
 		{ "pint", pint },
 		{ "pop", pop },
 		{ "swap", swap },
-	/*	{ "add", add },
+		{ "add", add },
 		{ "nop", nop },
 		{ "sub", sub },
-		{ "div", divide },
+	/*	{ "div", divide },
 		{ "mul", mul },
 		{ "mod", mod },
 		{ "pchar", pchar },
@@ -37,7 +37,7 @@ void pick_function(char *opcode, int number)
 		/* in here is better to return the function or just execute it */
 			/* printf("opcode tpok = %s\n", opcode); */
 			/* printf("number = %d\n", number); */
-			opcode_structure[i].f(&(svar.head), number);
+			opcode_structure[i].f(&(svar.head), svar.n);
 			return;
 		}
 		++i;
