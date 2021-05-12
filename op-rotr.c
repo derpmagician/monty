@@ -10,6 +10,7 @@
 void rotr(stack_t **stack, unsigned int line_number)
 {
     stack_t *last_node, *tmp = *stack, *new_last;
+    (void) line_number;
 
     while (last_node->next)
         last_node = last_node->next;
