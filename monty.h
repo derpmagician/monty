@@ -65,7 +65,7 @@ typedef struct variables_s
 	int nodes_number;
 } var_t;
 
-
+extern var_t svar;
 /* extern stack_t *head; */
 
 void pick_function(char *opcode, int number);
