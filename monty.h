@@ -70,7 +70,7 @@ typedef struct instruction_s
  * @nodes_number: number of nodes
  *
  * Description: structure to handle easily the exercise and
- * do 1 function for stack, queues, LIFO, FIFO 
+ * do 1 function for stack, queues, LIFO, FIFO
  */
 typedef struct variables_s
 {
