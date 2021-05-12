@@ -65,7 +65,7 @@ typedef struct instruction_s
 
 /**
  * struct variable_s - structure for data in the actual stack
- * @type: 0 if is a stack ; 1 if is a queue
+ * @type: 0 if is a stack LIFO; 1 if is a queue FIFO
  * @head: head of the stack
  * @nodes_number: number of nodes
  *
@@ -110,6 +110,8 @@ void pchar(stack_t **stack, unsigned int line_number);
 void pstr(stack_t **stack, unsigned int line_number);
 void rotl(stack_t **stack, unsigned int line_number);
 void rotr(stack_t **stack, unsigned int line_number);
+void queue(stack_t **stack, unsigned int line_number);
+void stack(stack_t **stack, unsigned int line_number);
 
 /* standard functions of the library */
 int _atoi(char *str);
