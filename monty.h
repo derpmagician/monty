@@ -73,7 +73,8 @@ typedef struct variables_s
 	int nodes_number;
 } var_t;
 
-extern var_t svar;
+var_t svar;
+/* extern var_t svar; */
 /* extern stack_t *head; */
 
 void pick_function(char *opcode, int number);
@@ -107,5 +108,6 @@ int _atoi(char *str);
 stack_t *add_dnodeint(stack_t **head, const int n);
 stack_t *add_dnodeint_end(stack_t **head, const int n);
 void free_dlistint(stack_t *head);
+int delete_dnodeint_at_index(stack_t **head, unsigned int index);
 
 #endif

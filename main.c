@@ -1,7 +1,5 @@
 #include "monty.h"
 
-var_t svar;
-
 void initialize_stack(void);
 
 /**

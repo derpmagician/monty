@@ -27,4 +27,5 @@ void pop(stack_t **stack, unsigned int line_number)
 	}
 
 	free(temp);
+	svar.nodes_number = svar.nodes_number - 1;
 }
