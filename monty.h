@@ -77,6 +77,7 @@ extern var_t svar;
 /* extern stack_t *head; */
 
 void pick_function(char *opcode, int number);
+unsigned int count_stack(stack_t *stack);
 
 void frees_stack(void);
 void handle_error(int errno, char *opcode, unsigned int line, char *buff);
