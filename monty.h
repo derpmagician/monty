@@ -68,8 +68,6 @@ typedef struct variables_s
 extern var_t svar;
 /* extern stack_t *head; */
 
-/* extern stack_t *head; */
-
 void pick_function(char *opcode, int number);
 
 void frees_stack(void);
@@ -96,5 +94,10 @@ void rotr(stack_t **stack, unsigned int line_number);
 
 /* standard functions of the library */
 int _atoi(char *str);
+
+/* double linked list functions */
+stack_t *add_dnodeint(stack_t **head, const int n);
+stack_t *add_dnodeint_end(stack_t **head, const int n);
+void free_dlistint(stack_t *head);
 
 #endif
