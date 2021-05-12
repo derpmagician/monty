@@ -18,14 +18,14 @@ void swap(stack_t **stack, unsigned int line_number)
 	if (length < 2)
 		handle_error(ERR_SWAP_USG, NULL, line_number, NULL);
 
-	/* the change in monty is always since the memory, not values
-	if (*stack)
-	{
-		temp = (*stack)->n;
-		(*stack)->n = (*stack)->next->n;
-		(*stack)->next->n = temp;
-	}
-	*/
+	/* the change in monty is always since the memory, not values*/
+	/*if (*stack)*/
+	/*{*/
+	/*	temp = (*stack)->n;*/
+	/*	(*stack)->n = (*stack)->next->n;*/
+	/*	(*stack)->next->n = temp;*/
+	/*}*/
+
 	tmp1 = tmp2 = *stack;
 	tmp2 = tmp2->next;
 	/* first, will change the tmp1 to second position */
