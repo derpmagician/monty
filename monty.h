@@ -13,6 +13,7 @@
 #include <stdio.h>
 /* strtokn */
 #include <string.h>
+#include <ctype.h>
 
 #define MIN_ARGS 2
 /* Common Errors */
@@ -79,13 +80,11 @@ typedef struct variables_s
 	stack_t *head;
 	char *sbuff;
 	char *opcode;
-	int n;
+	char *after_opcode;
 	int nodes_number;
 } var_t;
 
-var_t svar;
-/* extern var_t svar; */
-/* extern stack_t *head; */
+extern var_t svar;
 
 void pick_function(char *opcode);
 unsigned int count_stack(stack_t *stack);
