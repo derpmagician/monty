@@ -19,7 +19,11 @@ int main(int argc, char **argv)
 	char *buff, *opcode;
 	size_t buff_size = 0;
 
-	check_args_num(argc);
+	if (argc != 2)
+	{
+		write(2, "USAGE: monty file\n", 18);
+		exit(EXIT_FAILURE);
+	}
 	fd = fopen(argv[1], "r");
 	check_access_rights(argv[1]);
 	if (!fd)
