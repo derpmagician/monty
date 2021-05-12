@@ -13,10 +13,10 @@ void pick_function(char *opcode, int number)
 	instruction_t opcode_structure[] = {
 		{ "push", push },
 		{ "pall", pall },
-	/*	{ "pint", pint },
+		{ "pint", pint },
 		{ "pop", pop },
 		{ "swap", swap },
-		{ "add", add },
+	/*	{ "add", add },
 		{ "nop", nop },
 		{ "sub", sub },
 		{ "div", divide },
