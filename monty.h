@@ -68,9 +68,14 @@ typedef struct variables_s
 extern var_t svar;
 /* extern stack_t *head; */
 
+/* extern stack_t *head; */
+
 void pick_function(char *opcode, int number);
 
 void frees_stack(void);
+void handle_error(int errno, char *opcode, unsigned int line, char *buff);
+void handle_cerror(int errno, char *opcode, unsigned int line);
+void handle_uerror(int errno, unsigned int line);
 
 void push(stack_t **stack, unsigned int param);
 void push_queue(stack_t **stack, unsigned int param);
