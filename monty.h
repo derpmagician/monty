@@ -13,7 +13,6 @@
 /* strtokn */
 #include <string.h>
 
-
 /* Common Errors */
 #define ERR_BAD_INST	100 /* "L%d: unknown instruction %s\n", line, opcode) */
 #define ERR_BAD_MALL	101 /* "Error: malloc failed\n"); */
@@ -57,8 +56,16 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-extern stack_t *head;
 
+typedef struct variables_s
+{
+	int type;
+	stack_t *head;
+	int nodes_number;
+} var_t;
+
+
+/* extern stack_t *head; */
 
 void pick_function(char *s, int number);
 
