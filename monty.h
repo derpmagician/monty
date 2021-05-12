@@ -6,6 +6,7 @@
 /* lib and handle errors */
 #include <stdlib.h>
 /* fd */
+#include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
 /* get line */
@@ -67,7 +68,7 @@ typedef struct variables_s
 
 /* extern stack_t *head; */
 
-void pick_function(char *s, int number);
+void pick_function(char *opcode, int number);
 
 void frees_stack(void);
 
