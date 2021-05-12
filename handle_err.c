@@ -15,6 +15,8 @@ void handle_error(int errno, char *opcode, unsigned int line, char *buff)
 		handle_cerror(errno, opcode, line);
 	else if (errno >= 200 && errno <= 210)
 		handle_uerror(errno, line);
+	else if (errno >= 211 && errno <= 220)
+		handle_more_uerror(errno, line);
 	else
 		return;
 
@@ -77,6 +79,21 @@ void handle_uerror(int errno, unsigned int line)
 			break;
 		case ERR_ADD_USG:
 			fprintf(stderr, "L%d: can't add, stack too short\n", line);
+			break;
+		case ERR_SUB_USG:
+			fprintf(stderr, "L%d: can't sub, stack too short\n", line);
+			break;
+		case ERR_DIV_USG:
+			fprintf(stderr, "L%d: can't div, stack too short\n", line);
+			break;
+		case ERR_DIV_ZRO:
+			fprintf(stderr, "L%d: division by zero\n", line);
+			break;
+		case ERR_MUL_USG:
+			fprintf(stderr, "L%d: can't mul, stack too short\n", line);
+			break;
+		case ERR_MOD_USG:
+			fprintf(stderr, "L%d: can't mod, stack too short\n", line);
 			break;
 		default:
 			break;
