@@ -66,7 +66,7 @@ typedef struct variables_s
 } var_t;
 
 
-/* extern stack_t *head; */
+extern stack_t *head;
 
 void pick_function(char *opcode, int number);
 
