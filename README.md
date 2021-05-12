@@ -17,8 +17,8 @@ Compilation & Output
 ```
 gcc -Wall -Werror -Wextra -pedantic *.c -o monty
 ```
-
-
+Outputs are printed on stdout
+Error messages are printed on stderr
 
 
 ---
