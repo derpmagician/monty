@@ -17,15 +17,15 @@ Compilation & Output
 ```
 gcc -Wall -Werror -Wextra -pedantic *.c -o monty
 ```
-Outputs are printed on stdout
-Error messages are printed on stderr
+Outputs are printed on **stdout**.
+Error messages are printed on **stderr**.
 
 
 ---
 Styling
 -----------
 
-The repository uses the Betty Style, using betty-style.pl and betty-doc.pl .
+The repository uses the Betty Style, * *using betty-style.pl* * and * *betty-doc.pl* * .
 Also it doesn't have more than 5 functions per file
 
 ---
