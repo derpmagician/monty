@@ -3,6 +3,7 @@
 var_t svar;
 
 void initialize_stack(void);
+char *handle_comment(char *str_input);
 
 /**
  * main - entry point of the program
@@ -37,7 +38,8 @@ int main(int argc, char **argv)
 	while (line_len >= 0)
 	{
 		svar.nodes_number++;
-		line = strtok(buff, "#");
+		line = handle_comment(buff);
+		/* line = strtok(buff, "#"); */
 		opcode = strtok(line, " \n\t");
 		/*svar.opcode = opcode;*/
 		if (opcode)
@@ -65,4 +67,32 @@ void initialize_stack(void)
 	svar.opcode = NULL;
 	svar.after_opcode = NULL;
 	svar.nodes_number = 0;
+}
+
+/**
+ * handle_comment - deletes a comment from the buffer
+ * @str_input: User's input
+ *
+ * Return: pointer to string
+ */
+char *handle_comment(char *str_input)
+{
+	char *without_comments = str_input;
+
+	if (*str_input == '#')
+	{
+		*str_input = '\n';
+		*(str_input + 1) = '\0';
+	}
+	while (str_input && *str_input)
+	{
+		if (*str_input == '#' && *(str_input - 1) == ' ')
+		{
+			*(str_input - 1) = '\n';
+			*str_input = '\0';
+			break;
+		}
+		str_input++;
+	}
+	return (without_comments);
 }
