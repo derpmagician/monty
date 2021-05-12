@@ -12,6 +12,16 @@ Description
 Repository for the Monty Proyect
 
 ---
+Compilation & Output
+-----------
+```
+gcc -Wall -Werror -Wextra -pedantic *.c -o monty
+```
+
+
+
+
+---
 Styling
 -----------
 
