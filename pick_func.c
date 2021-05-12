@@ -18,14 +18,14 @@ void pick_function(char *opcode)
 		{ "add", add },
 		{ "nop", nop },
 		{ "sub", sub },
-	/*	{ "div", divide },
+		{ "div", divide },
 		{ "mul", mul },
 		{ "mod", mod },
 		{ "pchar", pchar },
 		{ "pstr", pstr },
 		{ "rotl", rotl },
 		{ "rotr", rotr },
-		{ "stack", stack),
+	/*	{ "stack", stack),
 		{ "queue", queue} */
 		{ NULL, NULL }
 	};
