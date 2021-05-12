@@ -32,30 +32,33 @@ int main(int argc, char **argv)
 	initialize_stack();
 	/*in case we can't use the getline line_size = read_line(fd, &buff);*/
 	line_len = getline(&buff, &buff_size, fd);
-	while (line_len >= 0)
+	svar.sbuff = buff;
+	while (line_len > 0)
 	{
 		svar.nodes_number++;
 		/* line = strtok(buff, "\n"); */
 		/* printf("line = %s\n", line); */
 		line = strtok(buff, "#");
-		opcode = strtok(buff, " \n");
+		opcode = strtok(line, " \n");
+		/*svar.opcode = opcode;*/
 		if (opcode)
 		{
 
 			number = strtok(NULL, " \n\0");
-			if (!number)
-			{
-				pick_function(opcode, 0);
-				return (0);
-			}
 			/* printf("hereee opcode = %s.\n", opcode); */
-			pick_function(opcode, atoi(number));
+			if (!number)
+				svar.n = 0;
+			else
+				svar.n = atoi(number);
+			/* printf("number = %d.\n", svar.n); */
+			pick_function(opcode);
 		}
 		/* we need to check if inside of the line, 
 		there are an opcode and return it */
 		line_len = getline(&buff, &buff_size, fd);
 		line = NULL;
 		number = NULL;
+		svar.n = 0;
 	}
 	free(line);
 	free(buff);
@@ -67,5 +70,8 @@ void initialize_stack(void)
 	/* svar.type : 0 is stack ;  1 is queue */
 	svar.type = 0;
 	svar.head = NULL;
+	svar.sbuff = NULL;
+	svar.opcode = NULL;
+	svar.n = 0;
 	svar.nodes_number = 0;
 }
