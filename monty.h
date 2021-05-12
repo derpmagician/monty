@@ -57,7 +57,12 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+extern stack_t *head;
+
+
 void pick_function(char *s, int number);
+
+void frees_stack(void);
 
 void push(stack_t **stack, unsigned int param);
 void push_queue(stack_t **stack, unsigned int param);
