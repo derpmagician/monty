@@ -10,7 +10,7 @@
 void swap(stack_t **stack, unsigned int line_number)
 {
 	unsigned int length = 0, temp = 0;
-	stack_t *tmp1; *tmp2;
+	stack_t *tmp1, *tmp2;
 
 	/* length = count_stack(*stack); */
 	length = svar.nodes_number;
@@ -33,7 +33,7 @@ void swap(stack_t **stack, unsigned int line_number)
 	(tmp2->next)->prev = tmp1;
 	tmp1->prev = tmp2;
 	/* first node and connection with second */
-	*head = tmp2;
+	*stack = tmp2;
 	tmp2->next = tmp1;
 	tmp2->prev = NULL;
 }
