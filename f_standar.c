@@ -24,4 +24,5 @@ int _atoi(char *str)
 		++str;
 	}
 	return (result);
+
 }
