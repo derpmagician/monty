@@ -10,3 +10,11 @@
 Description
 -----------
 Repository for the Monty Proyect
+
+---
+Authors
+-----------
+<ul>
+	<li>Renzo Perez</li>
+	<li>Katherine Soto</li>
+</ul>
