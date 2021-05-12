@@ -9,7 +9,7 @@
 ---
 Description
 -----------
-Repository for the Monty Proyect
+Repository for the Monty Project
 
 ---
 Compilation & Output
@@ -20,6 +20,12 @@ gcc -Wall -Werror -Wextra -pedantic *.c -o monty
 Outputs are printed on **stdout**.
 Error messages are printed on **stderr**.
 
+---
+How to use it
+------------
+```
+./monty /bytecodes/<file_name.m>
+```
 
 ---
 Styling
