@@ -41,10 +41,10 @@ void handle_cerror(int errno, char *opcode, unsigned int line)
 	switch (errno)
 	{
 		case ERR_BAD_INST:
-			fprintf(stderr, "L%u: unknown instruction %s\n", line, opcode);
+			dprintf(2, "L%u: unknown instruction %s\n", line, opcode);
 			break;
 		case ERR_BAD_MALL:
-			fprintf(stderr, "Error: malloc failed\n");
+			dprintf(2, "Error: malloc failed\n");
 			break;
 		default:
 			break;
