@@ -85,9 +85,9 @@ typedef struct variables_s
 	FILE *sfd;
 } var_t;
 
-/* extern */ 
-var_t svar;
+extern var_t svar;
 
+/* manipulate stack memory */
 void initialize_stack(void);
 void finalize_stack(void);
 
@@ -119,9 +119,8 @@ void rotr(stack_t **stack, unsigned int line_number);
 void queue(stack_t **stack, unsigned int line_number);
 void stack(stack_t **stack, unsigned int line_number);
 
-/* standard functions of the library */
-int _atoi(char *str);
-
+/* auxiliar functions of the library */
+char *handle_comment(char *str_input);
 
 /* double linked list functions */
 stack_t *add_dnodeint(stack_t **head, const int n);
