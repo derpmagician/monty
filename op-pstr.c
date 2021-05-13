@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * pstr() - Prints the string starting at the top of the stack.
+ * pstr - Prints the string starting at the top of the stack.
  * @stack: The head of the stack
  * @line_number: The line on which the error occurred
  *
