@@ -20,7 +20,7 @@ void pick_function(char *opcode)
 		{ "sub", sub },
 	/*	{ "div", divide }, */
 	/*	{ "mul", mul }, */
-	/*	{ "mod", mod }, */
+		{ "mod", mod },
 		{ "pchar", pchar },
 		{ "pstr", pstr },
 		{ "rotl", rotl },
