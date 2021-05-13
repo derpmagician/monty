@@ -10,7 +10,7 @@ void finalize_stack(void);
  *
  * @argc: argc
  * @argv: arguments
- * Return: Always EXIT_SUCCESS.
+ * Return: 0 or stderr
  */
 int main(int argc, char **argv)
 {
@@ -29,7 +29,6 @@ int main(int argc, char **argv)
 		dprintf(2, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	/*in case we can't use the getline line_size = read_line(fd, &buff);*/
 	while (getline(&(svar.sbuff), &buff_size, svar.sfd) >= 0)
 	{
 		svar.nodes_number++;
@@ -64,7 +63,7 @@ void initialize_stack(void)
 }
 
 /**
- * handle_comment - finalize_stack
+ * finalize_stack - free memmory of the stack
  *
  * Return: void
  */

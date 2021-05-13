@@ -18,17 +18,19 @@ void pop(stack_t **stack, unsigned int line_number)
 	}
 
 	delete_dnodeint_at_index(stack, 0);
-/*
-	temp = current;
-	if (current->next)
-	{
-		current = current->next;
-		current->prev = temp->prev;
-		*stack = current;
-	}
-	else
-		*stack = NULL;
-
-	free(temp);
-	svar.nodes_number = svar.nodes_number - 1; */
 }
+/**
+* Description - hey
+* temp = current;
+* if (current->next)
+* {
+*		current = current->next;
+*		current->prev = temp->prev;
+*		*stack = current;
+* }
+*	else
+*		*stack = NULL;
+*
+*	free(temp);
+*	svar.nodes_number = svar.nodes_number - 1;
+*/
