@@ -1,3 +1,5 @@
+#include "monty.h"
+
 /**
  * queue - Pchange to fifo
  * @stack: The head of the stack
