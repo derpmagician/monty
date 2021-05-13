@@ -21,12 +21,12 @@ void pick_function(char *opcode)
 	/*	{ "div", divide }, */
 	/*	{ "mul", mul }, */
 	/*	{ "mod", mod }, */
-	/*	{ "pchar", pchar }, */
+		{ "pchar", pchar },
 	/*	{ "pstr", pstr }, */
 	/*	{ "rotl", rotl }, */
 	/*	{ "rotr", rotr }, */
 	/*	{ "stack", stack }, */
-	/*	{ "queue", queue }, */
+		{ "queue", queue },
 		{ NULL, NULL }
 	};
 	int i = 0;
