@@ -11,12 +11,7 @@ int verify_number(char *number);
   */
 void push(stack_t **stack, unsigned int line_number)
 {
-	stack_t *new_node = NULL;
 	int param;
-
-	new_node = malloc(sizeof(stack_t));
-	if (new_node == NULL)
-		handle_error(ERR_BAD_MALL, NULL, 0, NULL);
 
 	if (!verify_number(svar.after_opcode))
 	{
@@ -30,7 +25,6 @@ void push(stack_t **stack, unsigned int line_number)
 	else
 		param = atoi(svar.after_opcode);
 
-	new_node->n = param;
 	/* if is a stack or else: is a queue*/
 	if (svar.type == 0)
 		add_dnodeint(stack, param);
