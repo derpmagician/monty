@@ -43,6 +43,6 @@ void pick_function(char *opcode)
 		}
 		++i;
 	}
-	dprintf(2, "Line %d: Unknow instruction %s\n", svar.nodes_number, opcode);
+	dprintf(2, "L%d: Unknow instruction %s\n", svar.nodes_number, opcode);
 	exit(EXIT_FAILURE);
 }
