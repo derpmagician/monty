@@ -31,7 +31,7 @@ int main(int argc, char **argv)
 		/* buff = handle_comment(buff); */
 		/* line = strtok(buff, "#"); */
 		svar.opcode = strtok(svar.sbuff, " \n\t");
-		if (svar.opcode)
+		if (svar.opcode && svar.opcode[0] != '#')
 		{
 			svar.after_opcode = strtok(NULL, " \n\t");
 			pick_function(svar.opcode);
