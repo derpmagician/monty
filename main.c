@@ -1,9 +1,11 @@
 #include "monty.h"
+#include <stdio.h>
 
 var_t svar;
 
 void initialize_stack(void);
 char *handle_comment(char *str_input);
+void finalize_stack(void);
 
 /**
  * main - entry point of the program
@@ -38,7 +40,7 @@ int main(int argc, char **argv)
 	while (line_len >= 0)
 	{
 		svar.nodes_number++;
-		buff = handle_comment(buff);
+		/* buff = handle_comment(buff); */
 		/* line = strtok(buff, "#"); */
 		opcode = strtok(buff, " \n\t");
 		/*svar.opcode = opcode;*/
@@ -50,11 +52,12 @@ int main(int argc, char **argv)
 		/*we need to check if inside of the line,*/
 		/*there are an opcode and return it*/
 		line_len = getline(&buff, &buff_size, fd);
-		svar.after_opcode = NULL;
+		opcode = NULL, svar.after_opcode = NULL;
 	}
-	free(svar.buff);
+	free(svar.sbuff);
 	frees_stack();
 	fclose(fd);
+	
 	return (0);
 }
 
@@ -67,6 +70,13 @@ void initialize_stack(void)
 	svar.opcode = NULL;
 	svar.after_opcode = NULL;
 	svar.nodes_number = 0;
+}
+
+void finalize_stack(void)
+{
+	free(svar.sbuff);
+	frees_stack();
+	/* fclose(fd); */
 }
 
 /**
