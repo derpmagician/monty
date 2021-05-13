@@ -10,23 +10,17 @@
  */
 void add(stack_t **stack, unsigned int line_number)
 {
-	stack_t *tmp = *stack;
-	int sum = 0, idx = 0;
+	stack_t *temp = *stack;
+	unsigned int a = 0, b = 0, length = 0;
 
-	while (tmp->next)
-	{
-		tmp = tmp->next;
-		idx++;
-	}
+	length = count_stack(*stack);
 
-	if (idx < 2)
-	{
-		finalize_stack();
-		handle_error(ERR_SWAP_USG, NULL, line_number, NULL);
-	}
+	if (length < 2)
+		handle_error(ERR_ADD_USG, NULL, line_number, NULL);
 
-	sum = (*stack)->n;
-	delete_dnodeint_at_index(stack, 0);
-	(*stack)->n += sum;
-	svar.nodes_number = svar.nodes_number - 1;
+	a = temp->n;
+	b = temp->next->n;
+	temp->next->n = a + b;
+	*stack = temp->next;
+	free(temp);
 }
