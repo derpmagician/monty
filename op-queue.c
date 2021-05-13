@@ -1,9 +1,9 @@
 #include "monty.h"
 
 /**
- * queue - stack FIFO: queue
+ * queue - Pchange to fifo
  * @stack: The head of the stack
- * @line_number: The line where the operator is
+ * @line_number: current line
  *
  * Return: Nothing
  */
