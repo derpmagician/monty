@@ -18,7 +18,7 @@ void pick_function(char *opcode)
 		{ "add", add },
 		{ "nop", nop },
 		{ "sub", sub },
-	/*	{ "div", divide }, */
+		{ "div", divide },
 	/*	{ "mul", mul }, */
 		{ "mod", mod },
 		{ "pchar", pchar },
