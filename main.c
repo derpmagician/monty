@@ -1,8 +1,6 @@
 #include "monty.h"
 #include <stdio.h>
 
-var_t svar;
-
 /**
  * main - entry point of the program
  *

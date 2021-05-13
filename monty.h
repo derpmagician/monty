@@ -89,7 +89,7 @@ typedef struct variables_s
 	FILE *sfd;
 } var_t;
 
-extern var_t svar;
+var_t svar;
 
 /* manipulate stack memory */
 void initialize_stack(void);
