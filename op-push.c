@@ -23,12 +23,12 @@ int verify_number(char *number)
 }
 
 /**
-  * push - Adds a new node at the beginning of the stack or queue
-  * @stack: head of stack or queue
-  * @line_number: The head of the stack
-  *
-  * Return: Nothing
-  */
+ * push - Adds a new node at the beginning of the stack or queue
+ * @stack: head of stack or queue
+ * @line_number: The head of the stack
+ *
+ * Return: Nothing
+ */
 void push(stack_t **stack, unsigned int line_number)
 {
 	int param;

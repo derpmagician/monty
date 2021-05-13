@@ -2,12 +2,11 @@
 
 /**
  * initialize_stack - initialize the stack with a global variable
- *
+ * svar.type : 0 is stack ;  1 is queue
  * Return: void
  */
 void initialize_stack(void)
 {
-	/* svar.type : 0 is stack ;  1 is queue */
 	svar.type = 0;
 	svar.head = NULL;
 	svar.sbuff = NULL;

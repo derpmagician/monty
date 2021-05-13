@@ -1,12 +1,12 @@
 #include "monty.h"
 
 /**
-  * pick_function - Select the function that relates to the Monty instruction
-  * @opcode: The instruction to be execute
-  *
-  * Return: A pointer to the function to be executed or
-  * NULL if the function don't exists
-  */
+ * pick_function - Select the function that relates to the Monty instruction
+ * @opcode: The instruction to be execute
+ *
+ * Return: A pointer to the function to be executed or
+ * NULL if the function don't exists
+ */
 void pick_function(char *opcode)
 {
 	instruction_t opcode_structure[] = {
