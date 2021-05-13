@@ -25,8 +25,8 @@ void pick_function(char *opcode)
 	/*	{ "pstr", pstr }, */
 	/*	{ "rotl", rotl }, */
 	/*	{ "rotr", rotr }, */
-	/*	{ "stack", stack), */
-	/*	{ "queue", queue} */
+		{ "stack", stack },
+		{ "queue", queue },
 		{ NULL, NULL }
 	};
 	int i = 0;
