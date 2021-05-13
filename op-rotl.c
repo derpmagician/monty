@@ -9,18 +9,18 @@
  */
 void rotl(stack_t **stack, unsigned int line_number)
 {
-	stack_t *last_node, *tmp = *stack, *second_node;
+	stack_t *curr = *stack;
+	unsigned int temp = 0;
 	(void) line_number;
 
-	while (last_node->next)
-		last_node = last_node->next;
-
-	/* set the new top node of stack */
-	second_node = (*stack)->next;
-	second_node->prev = (*stack)->prev;
-	*stack = second_node;
-	/* becoming the first node (tmp), the last*/
-	tmp->next = last_node->next;
-	last_node->next = tmp;
-	tmp->prev = last_node;
+	if (curr && curr->next)
+	{
+		while (curr->next != NULL)
+		{
+			temp = curr->n;
+			curr->n = curr->next->n;
+			curr->next->n = temp;
+			curr = curr->next;
+		}
+	}
 }
