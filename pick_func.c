@@ -22,10 +22,10 @@ void pick_function(char *opcode)
 	/*	{ "mul", mul }, */
 	/*	{ "mod", mod }, */
 		{ "pchar", pchar },
-	/*	{ "pstr", pstr }, */
-	/*	{ "rotl", rotl }, */
-	/*	{ "rotr", rotr }, */
-	/*	{ "stack", stack }, */
+		{ "pstr", pstr },
+		{ "rotl", rotl },
+		{ "rotr", rotr },
+		{ "stack", stack },
 		{ "queue", queue },
 		{ NULL, NULL }
 	};
