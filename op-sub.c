@@ -10,20 +10,17 @@
  */
 void sub(stack_t **stack, unsigned int line_number)
 {
-	stack_t *tmp = *stack;
-	int result = 0, idx = 0;
+	stack_t *temp = *stack;
+	unsigned int a = 0, b = 0, length = 0;
 
-	while (tmp->next)
-	{
-		tmp = tmp->next;
-		idx++;
-	}
+	length = count_stack(*stack);
 
-	if (idx < 2)
-		handle_error(ERR_SWAP_USG, NULL, line_number, NULL);
+	if (length < 2)
+		handle_error(ERR_SUB_USG, NULL, line_number, NULL);
 
-	result = (*stack)->n;
-	delete_dnodeint_at_index(stack, 0);
-	(*stack)->n = (*stack)->n - result;
-	svar.nodes_number = svar.nodes_number - 1;
+	a = temp->n;
+	b = temp->next->n;
+	temp->next->n = b - a;
+	*stack = temp->next;
+	free(temp);
 }
