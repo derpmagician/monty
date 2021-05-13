@@ -56,6 +56,11 @@ int main(int argc, char **argv)
 	return (0);
 }
 
+/**
+ * initialize_stack - initialize the stack with a global variable
+ *
+ * Return: void
+ */
 void initialize_stack(void)
 {
 	/* svar.type : 0 is stack ;  1 is queue */
@@ -67,6 +72,11 @@ void initialize_stack(void)
 	svar.nodes_number = 0;
 }
 
+/**
+ * handle_comment - finalize_stack
+ *
+ * Return: void
+ */
 void finalize_stack(void)
 {
 	free(svar.sbuff);

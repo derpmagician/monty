@@ -19,7 +19,7 @@ void push(stack_t **stack, unsigned int line_number)
 		finalize_stack();
 		exit(EXIT_FAILURE);
 	}
-	
+
 	/* maybe in the future, we will need an strtok */
 	if (svar.after_opcode[0] == '-')
 		param = -1 * atoi(svar.after_opcode);
@@ -31,7 +31,7 @@ void push(stack_t **stack, unsigned int line_number)
 		add_dnodeint(stack, param);
 	else
 		add_dnodeint_end(stack, param);
-	
+
 	/* if (*stack)
 	{
 		new_node->next = *stack;

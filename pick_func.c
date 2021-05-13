@@ -2,7 +2,7 @@
 
 /**
   * pick_function - Select the function that relates to the Monty instruction
-  * @s: The instruction to be executed
+  * @opcode: The instruction to be execute
   *
   * Return: A pointer to the function to be executed or
   * NULL if the function don't exists
@@ -18,15 +18,15 @@ void pick_function(char *opcode)
 		{ "add", add },
 		{ "nop", nop },
 		{ "sub", sub },
-	/*	{ "div", divide },
-		{ "mul", mul },
-		{ "mod", mod },
-		{ "pchar", pchar },
-		{ "pstr", pstr },
-		{ "rotl", rotl },
-		{ "rotr", rotr },
-		{ "stack", stack),
-		{ "queue", queue} */
+	/*	{ "div", divide }, */
+	/*	{ "mul", mul }, */
+	/*	{ "mod", mod }, */
+	/*	{ "pchar", pchar }, */
+	/*	{ "pstr", pstr }, */
+	/*	{ "rotl", rotl }, */
+	/*	{ "rotr", rotr }, */
+	/*	{ "stack", stack), */
+	/*	{ "queue", queue} */
 		{ NULL, NULL }
 	};
 	int i = 0;

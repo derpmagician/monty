@@ -13,7 +13,7 @@ void add(stack_t **stack, unsigned int line_number)
 	stack_t *tmp = *stack;
 	int sum = 0, idx = 0;
 
-	while(tmp->next)
+	while (tmp->next)
 	{
 		tmp = tmp->next;
 		idx++;
