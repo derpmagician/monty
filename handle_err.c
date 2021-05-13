@@ -41,7 +41,7 @@ void handle_cerror(int errno, char *opcode, unsigned int line)
 	switch (errno)
 	{
 		case ERR_BAD_INST:
-			fprintf(stderr, "L%d: unknown instruction %s\n", line, opcode);
+			fprintf(stderr, "L%u: unknown instruction %s\n", line, opcode);
 			break;
 		case ERR_BAD_MALL:
 			fprintf(stderr, "Error: malloc failed\n");
@@ -66,34 +66,34 @@ void handle_uerror(int errno, unsigned int line)
 			dprintf(2, "USAGE: monty file\n");
 			break;
 		case ERR_PUSH_USG:
-			dprintf(2, "L%d: usage: push integer\n", line);
+			dprintf(2, "L%u: usage: push integer\n", line);
 			break;
 		case ERR_PINT_USG:
-			dprintf(2, "L%d: can't pint, stack empty\n", line);
+			dprintf(2, "L%u: can't pint, stack empty\n", line);
 			break;
 		case ERR_POP_USG:
-			dprintf(2, "L%d: can't pop an empty stack\n", line);
+			dprintf(2, "L%u: can't pop an empty stack\n", line);
 			break;
 		case ERR_SWAP_USG:
-			dprintf(2, "L%d: can't swap, stack too short\n", line);
+			dprintf(2, "L%u: can't swap, stack too short\n", line);
 			break;
 		case ERR_ADD_USG:
-			dprintf(2, "L%d: can't add, stack too short\n", line);
+			dprintf(2, "L%u: can't add, stack too short\n", line);
 			break;
 		case ERR_SUB_USG:
-			dprintf(2, "L%d: can't sub, stack too short\n", line);
+			dprintf(2, "L%u: can't sub, stack too short\n", line);
 			break;
 		case ERR_DIV_USG:
-			dprintf(2, "L%d: can't div, stack too short\n", line);
+			dprintf(2, "L%u: can't div, stack too short\n", line);
 			break;
 		case ERR_DIV_ZRO:
-			dprintf(2, "L%d: division by zero\n", line);
+			dprintf(2, "L%u: division by zero\n", line);
 			break;
 		case ERR_MUL_USG:
-			dprintf(2, "L%d: can't mul, stack too short\n", line);
+			dprintf(2, "L%u: can't mul, stack too short\n", line);
 			break;
 		case ERR_MOD_USG:
-			dprintf(2, "L%d: can't mod, stack too short\n", line);
+			dprintf(2, "L%u: can't mod, stack too short\n", line);
 			break;
 		default:
 			break;
@@ -112,10 +112,10 @@ void handle_more_uerror(int errno, unsigned int line)
 	switch (errno)
 	{
 		case ERR_PCH_USG:
-			fprintf(stderr, "L%d: can't pchar, value out of range\n", line);
+			dprintf(2, "L%u: can't pchar, value out of range\n", line);
 			break;
 		case ERR_PCH_EMP:
-			fprintf(stderr, "L%d: can't pchar, stack empty\n", line);
+			dprintf(2, "L%u: can't pchar, stack empty\n", line);
 			break;
 		default:
 			break;

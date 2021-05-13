@@ -15,7 +15,7 @@ void push(stack_t **stack, unsigned int line_number)
 
 	if (!verify_number(svar.after_opcode))
 	{
-		dprintf(2, "L%d: usage: push integer\n", line_number);
+		dprintf(2, "L%u: usage: push integer\n", line_number);
 		finalize_stack();
 		exit(EXIT_FAILURE);
 	}

@@ -85,7 +85,7 @@ typedef struct variables_s
 	char *sbuff;
 	char *opcode;
 	char *after_opcode;
-	int nodes_number;
+	unsigned int nodes_number;
 	FILE *sfd;
 } var_t;
 
