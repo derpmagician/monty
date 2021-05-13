@@ -1,6 +1,26 @@
 #include "monty.h"
 
-int verify_number(char *number);
+/**
+ * verify_number - verify if it is a number or not
+ *
+ * @number: number
+ * Return: Always EXIT_SUCCESS.
+ */
+int verify_number(char *number)
+{
+	if (!number)
+		return (0);
+	if (*number == '-')
+		number++;
+
+	while (*number)
+	{
+		if (!isdigit(*number))
+			return (0);
+		number++;
+	}
+	return (1);
+}
 
 /**
   * push - Adds a new node at the beginning of the stack or queue
@@ -45,28 +65,6 @@ void push(stack_t **stack, unsigned int line_number)
 	* new_node->prev = NULL;
 	* stack = new_node;
 	*/
-}
-
-/**
- * verify_number - verify if it is a number or not
- *
- * @number: number
- * Return: Always EXIT_SUCCESS.
- */
-int verify_number(char *number)
-{
-	if (!number)
-		return (0);
-	if (*number == '-')
-		number++;
-
-	while (*number)
-	{
-		if (!isdigit(*number))
-			return (0);
-		number++;
-	}
-	return (1);
 }
 
 /**
