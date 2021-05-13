@@ -9,19 +9,18 @@
  */
 void rotr(stack_t **stack, unsigned int line_number)
 {
-	stack_t *last_node, *tmp = *stack, *new_last;
+	stack_t *last = NULL;
 	(void) line_number;
 
-	while (last_node->next)
-		last_node = last_node->next;
+	if (*stack && (*stack)->next)
+	{
+		last = *stack;
 
-	/* set the new last node */
-	new_last = last_node->prev;
-	new_last->next = last_node->next;
-	/* becoming the last node, first */
-	last_node->prev = tmp->prev;
-	last_node->next = tmp;
-	tmp->prev = last_node;
-	/* changing the stack header */
-	*stack = last_node;
+		while (last->next != NULL)
+			last = last->next;
+
+		last->prev->next = NULL;
+		last->next = *stack;
+		*stack = last;
+	}
 }
