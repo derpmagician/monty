@@ -66,10 +66,14 @@ typedef struct instruction_s
 } instruction_t;
 
 /**
- * struct variable_s - structure for data in the actual stack
+ * struct variables_s - structure for data in the actual stack
  * @type: 0 if is a stack LIFO; 1 if is a queue FIFO
  * @head: head of the stack
+ * @sbuff: buffer
+ * @opcode: opcode
+ * @after_opcode: number or whatever
  * @nodes_number: number of nodes
+ * @sfd: fd
  *
  * Description: structure to handle easily the exercise and
  * do 1 function for stack, queues, LIFO, FIFO
