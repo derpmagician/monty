@@ -1,4 +1,4 @@
-#include "monty.h"
+
 
 /**
  * pstr - Prints the string starting at the top of the stack.
@@ -7,7 +7,7 @@
  *
  * Return: Nothing
  */
-void pstr(stack_t **stack, unsigned int line_number)
+void pstr_op(stack_t **stack, unsigned int line_number)
 {
 	stack_t *curr = *stack;
 	(void) line_number;
