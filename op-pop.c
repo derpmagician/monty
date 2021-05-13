@@ -12,7 +12,10 @@ void pop(stack_t **stack, unsigned int line_number)
 	stack_t *current = *stack, *temp = NULL;
 
 	if (*stack == NULL)
+	{
+		finalize_stack();
 		handle_error(ERR_POP_USG, NULL, line_number, NULL);
+	}
 
 	temp = current;
 	if (current->next)
@@ -22,9 +25,7 @@ void pop(stack_t **stack, unsigned int line_number)
 		*stack = current;
 	}
 	else
-	{
 		*stack = NULL;
-	}
 
 	free(temp);
 	svar.nodes_number = svar.nodes_number - 1;

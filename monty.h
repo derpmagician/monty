@@ -82,9 +82,13 @@ typedef struct variables_s
 	char *opcode;
 	char *after_opcode;
 	int nodes_number;
+	FILE *sfd;
 } var_t;
 
 extern var_t svar;
+
+void initialize_stack(void);
+void finalize_stack(void);
 
 void pick_function(char *opcode);
 unsigned int count_stack(stack_t *stack);

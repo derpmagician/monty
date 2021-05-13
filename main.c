@@ -34,6 +34,7 @@ int main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 	initialize_stack();
+	svar.sfd = fd;
 	/*in case we can't use the getline line_size = read_line(fd, &buff);*/
 	line_len = getline(&buff, &buff_size, fd);
 	svar.sbuff = buff;
@@ -43,21 +44,15 @@ int main(int argc, char **argv)
 		/* buff = handle_comment(buff); */
 		/* line = strtok(buff, "#"); */
 		opcode = strtok(buff, " \n\t");
-		/*svar.opcode = opcode;*/
 		if (opcode)
 		{
 			svar.after_opcode = strtok(NULL, " \n\t ");
 			pick_function(opcode);
 		}
-		/*we need to check if inside of the line,*/
-		/*there are an opcode and return it*/
 		line_len = getline(&buff, &buff_size, fd);
 		opcode = NULL, svar.after_opcode = NULL;
 	}
-	free(svar.sbuff);
-	frees_stack();
-	fclose(fd);
-	
+	finalize_stack();
 	return (0);
 }
 
@@ -76,7 +71,7 @@ void finalize_stack(void)
 {
 	free(svar.sbuff);
 	frees_stack();
-	/* fclose(fd); */
+	fclose(svar.sfd);
 }
 
 /**

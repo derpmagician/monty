@@ -20,7 +20,10 @@ void add(stack_t **stack, unsigned int line_number)
 	}
 
 	if (idx < 2)
+	{
+		finalize_stack();
 		handle_error(ERR_SWAP_USG, NULL, line_number, NULL);
+	}
 
 	sum = (*stack)->n;
 	delete_dnodeint_at_index(stack, 0);
