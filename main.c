@@ -16,9 +16,6 @@ void finalize_stack(void);
  */
 int main(int argc, char **argv)
 {
-	ssize_t line_len;
-	FILE *fd;
-	char *buff, *opcode;
 	size_t buff_size = 0;
 
 	if (argc != 2)
@@ -26,31 +23,27 @@ int main(int argc, char **argv)
 		write(2, "USAGE: monty file\n", 18);
 		exit(EXIT_FAILURE);
 	}
-	fd = fopen(argv[1], "r");
+	initialize_stack();
+	svar.sfd = fopen(argv[1], "r");
 	check_access_rights(argv[1]);
-	if (!fd)
+	if (!svar.sfd)
 	{
 		dprintf(2, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	initialize_stack();
-	svar.sfd = fd;
 	/*in case we can't use the getline line_size = read_line(fd, &buff);*/
-	line_len = getline(&buff, &buff_size, fd);
-	svar.sbuff = buff;
-	while (line_len >= 0)
+	while (getline(&(svar.sbuff), &buff_size, svar.sfd) >= 0)
 	{
 		svar.nodes_number++;
 		/* buff = handle_comment(buff); */
 		/* line = strtok(buff, "#"); */
-		opcode = strtok(buff, " \n\t");
-		if (opcode)
+		svar.opcode = strtok(svar.sbuff, " \n\t");
+		if (svar.opcode)
 		{
-			svar.after_opcode = strtok(NULL, " \n\t ");
-			pick_function(opcode);
+			svar.after_opcode = strtok(NULL, " \n\t");
+			pick_function(svar.opcode);
 		}
-		line_len = getline(&buff, &buff_size, fd);
-		opcode = NULL, svar.after_opcode = NULL;
+		svar.opcode = NULL, svar.after_opcode = NULL;
 	}
 	finalize_stack();
 	return (0);
