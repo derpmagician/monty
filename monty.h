@@ -85,7 +85,8 @@ typedef struct variables_s
 	FILE *sfd;
 } var_t;
 
-extern var_t svar;
+/* extern */ 
+var_t svar;
 
 void initialize_stack(void);
 void finalize_stack(void);

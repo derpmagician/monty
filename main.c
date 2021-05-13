@@ -1,8 +1,6 @@
 #include "monty.h"
 #include <stdio.h>
 
-var_t svar;
-
 void initialize_stack(void);
 char *handle_comment(char *str_input);
 void finalize_stack(void);
