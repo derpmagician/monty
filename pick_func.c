@@ -14,9 +14,9 @@ void pick_function(char *opcode)
 		{ "pall", pall },
 		{ "pint", pint },
 		{ "pop", pop },
-	/*	{ "swap", swap }, */
-	/*	{ "add", add }, */
-	/*	{ "nop", nop }, */
+		{ "swap", swap },
+		{ "add", add },
+		{ "nop", nop },
 	/*	{ "sub", sub }, */
 	/*	{ "div", divide }, */
 	/*	{ "mul", mul }, */
