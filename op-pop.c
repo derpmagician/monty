@@ -8,8 +8,6 @@
  */
 void pop(stack_t **stack, unsigned int line_number)
 {
-	/* stack_t *current = *stack, *temp = NULL; */
-
 	if (*stack == NULL)
 	{
 		finalize_stack();
@@ -18,18 +16,3 @@ void pop(stack_t **stack, unsigned int line_number)
 
 	delete_dnodeint_at_index(stack, 0);
 }
-/**
-* Description - hey
-* temp = current;
-* if (current->next)
-* {
-*		current = current->next;
-*		current->prev = temp->prev;
-*		*stack = current;
-* }
-*	else
-*		*stack = NULL;
-*
-*	free(temp);
-*	svar.nodes_number = svar.nodes_number - 1;
-*/
