@@ -72,7 +72,7 @@ typedef struct instruction_s
  * @sbuff: buffer
  * @opcode: opcode
  * @after_opcode: number or whatever
- * @nodes_number: number of nodes
+ * @current_line: current line
  * @sfd: fd
  *
  * Description: structure to handle easily the exercise and
