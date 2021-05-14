@@ -23,6 +23,7 @@ int main(int argc, char **argv)
 	if (!svar.sfd)
 	{
 		dprintf(2, "Error: Can't open file %s\n", argv[1]);
+		finalize_stack();
 		exit(EXIT_FAILURE);
 	}
 	while (getline(&(svar.sbuff), &buff_size, svar.sfd) >= 0)
