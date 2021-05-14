@@ -15,12 +15,12 @@ void divide(stack_t **stack, unsigned int line_number)
 	length = count_stack(*stack);
 
 	if (length < 2)
-		handle_error(ERR_DIV_USG, NULL, line_number, NULL);
+		handle_error(ERR_DIV_USG);
 
 	a = temp->n;
 
 	if (a == 0)
-		handle_error(ERR_DIV_ZRO, NULL, line_number, NULL);
+		handle_error(ERR_DIV_ZRO);
 
 	b = temp->next->n;
 	temp->next->n = b / a;

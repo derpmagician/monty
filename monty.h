@@ -99,7 +99,7 @@ void pick_function(char *opcode);
 unsigned int count_stack(stack_t *stack);
 
 void frees_stack(void);
-void handle_error(int errno, char *opcode, unsigned int line, char *buff);
+void handle_error(int errno);
 void handle_cerror(int errno, char *opcode, unsigned int line);
 void handle_uerror(int errno, unsigned int line);
 void handle_more_uerror(int errno, unsigned int line);

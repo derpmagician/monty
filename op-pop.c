@@ -11,7 +11,7 @@ void pop(stack_t **stack, unsigned int line_number)
 	if (*stack == NULL)
 	{
 		finalize_stack();
-		handle_error(ERR_POP_USG, NULL, line_number, NULL);
+		handle_error(ERR_POP_USG);
 	}
 
 	delete_dnodeint_at_index(stack, 0);

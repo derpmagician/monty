@@ -3,20 +3,17 @@
 /**
  * handle_error - Manages the printing of interpreter errors
  * @errno: The error code to manage
- * @opcode: The operation code to manage
- * @line: The line on which the error occurred
- * @buff: The reserved error line buffer
  *
  * Return: Nothing
  */
-void handle_error(int errno, char *opcode, unsigned int line, char *buff)
+void handle_error(int errno)
 {
 	if (errno >= 100 && errno < 200)
-		handle_cerror(errno, opcode, line);
+		handle_cerror(errno, svar.opcode, svar.current_line);
 	else if (errno >= 200 && errno <= 210)
-		handle_uerror(errno, line);
+		handle_uerror(errno, svar.current_line);
 	else if (errno >= 211 && errno <= 220)
-		handle_more_uerror(errno, line);
+		handle_more_uerror(errno, svar.current_line);
 	else
 		return;
 

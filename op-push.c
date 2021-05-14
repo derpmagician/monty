@@ -32,11 +32,7 @@ void push(stack_t **stack, unsigned int line_number)
 	int param;
 
 	if (!verify_number(svar.after_opcode))
-	{
-		dprintf(2, "L%u: usage: push integer\n", line_number);
-		finalize_stack();
-		exit(EXIT_FAILURE);
-	}
+		handle_error(ERR_PUSH_USG);
 
 	/* maybe in the future, we will need an strtok */
 	if (svar.after_opcode[0] == '-')
@@ -48,11 +44,11 @@ void push(stack_t **stack, unsigned int line_number)
 	if (svar.type == 0)
 	{
 		if (!add_dnodeint(stack, param))
-			handle_cerror(ERR_BAD_MALL, svar.opcode, line_number);
+			handle_error(ERR_BAD_MALL);
 	}
 	else
 	{
 		if (!add_dnodeint_end(stack, param))
-			handle_cerror(ERR_BAD_MALL, svar.opcode, line_number);
+			handle_error(ERR_BAD_MALL);
 	}
 }
