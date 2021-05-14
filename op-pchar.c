@@ -11,12 +11,14 @@
 void pchar(stack_t **stack, unsigned int line_number)
 {
 	(void) line_number;
+	stack_t *tmp = NULL;
 
 	if (*stack == NULL)
 		handle_error(ERR_PCH_EMP);
 
-	if ((*stack)->n >= 0 && (*stack)->n <= 127)
-		printf("%c\n", (*stack)->n);
+	tmp = *stack;
+	if (tmp->n >= 0 && tmp->n <= 127)
+		printf("%c\n", tmp->n);
 	else
 		handle_error(ERR_PCH_USG);
 }
