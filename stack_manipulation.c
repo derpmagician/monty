@@ -12,7 +12,7 @@ void initialize_stack(void)
 	svar.sbuff = NULL;
 	svar.opcode = NULL;
 	svar.after_opcode = NULL;
-	svar.nodes_number = 0;
+	svar.current_line = 0;
 }
 
 /**

@@ -20,11 +20,7 @@ void handle_error(int errno, char *opcode, unsigned int line, char *buff)
 	else
 		return;
 
-	frees_stack();
-
-	if (buff)
-		free(buff);
-
+	finalize_stack();
 	exit(EXIT_FAILURE);
 }
 

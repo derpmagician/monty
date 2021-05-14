@@ -37,12 +37,12 @@ void pick_function(char *opcode)
 		{
 		/* in here is better to return the function or just execute it */
 			/* printf("opcode tpok = %s\n", opcode); */
-			/* printf("number = %d\n", svar.nodes_number); */
-			opcode_structure[i].f(&(svar.head), svar.nodes_number);
+			/* printf("number = %d\n", svar.current_line); */
+			opcode_structure[i].f(&(svar.head), svar.current_line);
 			return;
 		}
 		++i;
 	}
-	dprintf(2, "L%d: unknown instruction %s\n", svar.nodes_number, opcode);
+	dprintf(2, "L%d: unknown instruction %s\n", svar.current_line, opcode);
 	exit(EXIT_FAILURE);
 }

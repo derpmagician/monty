@@ -46,7 +46,13 @@ void push(stack_t **stack, unsigned int line_number)
 
 	/* if is a stack or else: is a queue*/
 	if (svar.type == 0)
-		add_dnodeint(stack, param);
+	{
+		if (!add_dnodeint(stack, param))
+			handle_cerror(ERR_BAD_MALL, svar.opcode, line_number);
+	}
 	else
-		add_dnodeint_end(stack, param);
+	{
+		if (!add_dnodeint_end(stack, param))
+			handle_cerror(ERR_BAD_MALL, svar.opcode, line_number);
+	}
 }

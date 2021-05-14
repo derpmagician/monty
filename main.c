@@ -27,7 +27,7 @@ int main(int argc, char **argv)
 	}
 	while (getline(&(svar.sbuff), &buff_size, svar.sfd) >= 0)
 	{
-		svar.nodes_number++;
+		svar.current_line++;
 		/* buff = handle_comment(buff); */
 		/* line = strtok(buff, "#"); */
 		svar.opcode = strtok(svar.sbuff, " \n\t");
