@@ -10,6 +10,7 @@
 void swap(stack_t **stack, unsigned int line_number)
 {
 	unsigned int length = 0, temp = 0;
+	(void) line_number;
 
 	length = count_stack(*stack);
 

@@ -30,6 +30,7 @@ int verify_number(char *number)
 void push(stack_t **stack, unsigned int line_number)
 {
 	int param;
+	(void) line_number;
 
 	if (!verify_number(svar.after_opcode))
 		handle_error(ERR_PUSH_USG);

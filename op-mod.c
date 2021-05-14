@@ -12,6 +12,7 @@ void mod(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp = *stack;
 	unsigned int a = 0, b = 0, length = 0;
+	(void) line_number;
 
 	length = count_stack(*stack);
 
